@@ -1,0 +1,105 @@
+{% extends "chatbot/base.html" %}
+{% block title %}Dashboard | Health Assistant{% endblock %}
+
+{% block content %}
+
+<h1 class="text-3xl font-semibold mb-6 text-gray-800 dark:text-gray-100">
+    Welcome, User 👋
+</h1>
+
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+
+    <!-- Total Chats -->
+    <div class="bg-white dark:bg-gray-800 shadow-lg p-6 rounded-xl flex items-center gap-4">
+        <div class="bg-teal-600 text-white p-3 rounded-lg text-2xl">💬</div>
+        <div>
+            <p class="text-gray-500 dark:text-gray-300 text-sm">Total Chats</p>
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">128</h2>
+        </div>
+    </div>
+
+    <!-- Predictions -->
+    <div class="bg-white dark:bg-gray-800 shadow-lg p-6 rounded-xl flex items-center gap-4">
+        <div class="bg-indigo-600 text-white p-3 rounded-lg text-2xl">📊</div>
+        <div>
+            <p class="text-gray-500 dark:text-gray-300 text-sm">Predictions</p>
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">42</h2>
+        </div>
+    </div>
+
+    <!-- Alerts -->
+    <div class="bg-white dark:bg-gray-800 shadow-lg p-6 rounded-xl flex items-center gap-4">
+        <div class="bg-red-600 text-white p-3 rounded-lg text-2xl">⚠</div>
+        <div>
+            <p class="text-gray-500 dark:text-gray-300 text-sm">Critical Alerts</p>
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">3</h2>
+        </div>
+    </div>
+
+    <!-- Records -->
+    <div class="bg-white dark:bg-gray-800 shadow-lg p-6 rounded-xl flex items-center gap-4">
+        <div class="bg-yellow-500 text-white p-3 rounded-lg text-2xl">📁</div>
+        <div>
+            <p class="text-gray-500 dark:text-gray-300 text-sm">Health Records</p>
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">10</h2>
+        </div>
+    </div>
+
+</div>
+
+<!-- Recent Activity + Quick Links -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <!-- Recent Activity -->
+    <div class="lg:col-span-2 bg-white dark:bg-gray-800 shadow-lg p-6 rounded-xl">
+        <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Recent Activity</h2>
+
+        <ul class="space-y-4">
+            <li class="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                <span class="text-gray-700 dark:text-gray-300">🩺 Symptom check performed</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">2 hours ago</span>
+            </li>
+            <li class="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                <span class="text-gray-700 dark:text-gray-300">📊 Prediction generated</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">5 hours ago</span>
+            </li>
+            <li class="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                <span class="text-gray-700 dark:text-gray-300">⚠ Alert flagged: High Fever</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">1 day ago</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Quick Access -->
+    <div class="bg-white dark:bg-gray-800 shadow-lg p-6 rounded-xl">
+        <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Quick Access</h2>
+
+        <div class="space-y-4">
+
+            <a href="/chat"
+               class="block p-4 bg-teal-600 text-white rounded-lg shadow hover:bg-teal-700 transition">
+                💬 Start New Chat
+            </a>
+
+            <a href="/history"
+               class="block p-4 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">
+                📜 View Chat History
+            </a>
+
+            <a href="/records"
+               class="block p-4 bg-yellow-500 text-white rounded-lg shadow hover:bg-yellow-600 transition">
+                📁 Health Records
+            </a>
+
+            <a href="/alerts"
+               class="block p-4 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition">
+                ⚠ Alerts
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'chatbot/base.html' %}
+{% block title %}Chat History | Health App{% endblock %}
+
+{% block content %}
+
+<div class="p-6">
+
+    <!-- Header -->
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">
+        💬 Chat History
+    </h1>
+
+    <p class="text-gray-600 dark:text-gray-300 mb-6">
+        Browse all your past conversations with the Health Assistant.
+    </p>
+
+    <!-- Chat History Container -->
+    <div class="space-y-4">
+
+        <!-- Chat Item -->
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow flex items-start justify-between hover:shadow-lg transition cursor-pointer">
+            <div class="flex items-start space-x-4">
+                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" class="w-10 h-10 rounded-full">
+
+                <div>
+                    <h3 class="font-bold text-gray-900 dark:text-gray-100 text-lg">
+                        Conversation #1
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">
+                        You: I have cold and cough...
+                    </p>
+                    <p class="text-gray-500 dark:text-gray-400 text-xs mt-1">5 minutes ago</p>
+                </div>
+            </div>
+
+            <span class="text-gray-500 dark:text-gray-300">➡️</span>
+        </div>
+
+        <!-- Chat Item -->
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow flex items-start justify-between hover:shadow-lg transition cursor-pointer">
+            <div class="flex items-start space-x-4">
+                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" class="w-10 h-10 rounded-full">
+
+                <div>
+                    <h3 class="font-bold text-gray-900 dark:text-gray-100 text-lg">
+                        Conversation #2
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">
+                        You: Feeling headache and fever...
+                    </p>
+                    <p class="text-gray-500 dark:text-gray-400 text-xs mt-1">2 hours ago</p>
+                </div>
+            </div>
+
+            <span class="text-gray-500 dark:text-gray-300">➡️</span>
+        </div>
+
+        <!-- Chat Item -->
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow flex items-start justify-between hover:shadow-lg transition cursor-pointer">
+            <div class="flex items-start space-x-4">
+                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" class="w-10 h-10 rounded-full">
+
+                <div>
+                    <h3 class="font-bold text-gray-900 dark:text-gray-100 text-lg">
+                        Conversation #3
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">
+                        You: Chest pain and weakness...
+                    </p>
+                    <p class="text-gray-500 dark:text-gray-400 text-xs mt-1">1 day ago</p>
+                </div>
+            </div>
+
+            <span class="text-gray-500 dark:text-gray-300">➡️</span>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

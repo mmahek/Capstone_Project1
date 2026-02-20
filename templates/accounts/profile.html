@@ -1,0 +1,64 @@
+{% extends "chatbot/base.html" %}
+
+{% block content %}
+
+<div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-xl border border-gray-200 dark:border-gray-700">
+
+    <!-- HEADER -->
+    <div class="flex items-center justify-between mb-10">
+        <h1 class="text-3xl font-extrabold tracking-wide">👤 Profile Overview</h1>
+
+        <a href="{% url 'accounts:edit-profile' %}"
+           class="px-5 py-2.5 bg-teal-600 text-white rounded-xl hover:bg-teal-700 transition shadow-md">
+            ✏ Edit Profile
+        </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <!-- PROFILE IMAGE CARD -->
+        <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-2xl shadow-md flex flex-col items-center">
+            
+            <div class="relative group">
+                <img src="{{ profile.profile_image.url }}"
+                     class="w-36 h-36 rounded-full object-cover border-4 border-teal-600 shadow-lg transition-transform group-hover:scale-105" />
+            </div>
+
+            <h2 class="mt-4 text-xl font-bold">{{ request.user.first_name }} {{ request.user.last_name }}</h2>
+            <p class="text-gray-500">{{ request.user.email }}</p>
+
+            <div class="mt-4 text-sm text-gray-400">
+                Member since {{ request.user.date_joined|date:"F Y" }}
+            </div>
+        </div>
+
+        <!-- DETAILS CARD -->
+        <div class="md:col-span-2 space-y-6">
+
+            <!-- PERSONAL DETAILS -->
+            <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-2xl shadow-md">
+                <h3 class="text-lg font-bold mb-4 border-b pb-2 border-gray-300 dark:border-gray-600">
+                    Personal Information
+                </h3>
+
+                <div class="grid grid-cols-2 gap-4 text-gray-800 dark:text-gray-100">
+
+                    <p><span class="font-semibold">First Name:</span> {{ request.user.first_name }}</p>
+                    <p><span class="font-semibold">Last Name:</span> {{ request.user.last_name }}</p>
+
+                    <p><span class="font-semibold">Email:</span> {{ request.user.email }}</p>
+
+                    <p><span class="font-semibold">Age:</span> {{ profile.age }}</p>
+                    <p><span class="font-semibold">Gender:</span> {{ profile.gender }}</p>
+
+                    <p class="col-span-2">
+                        <span class="font-semibold">Location:</span> {{ profile.location }}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

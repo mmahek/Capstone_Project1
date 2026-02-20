@@ -1,0 +1,69 @@
+{% extends 'chatbot/base.html' %}
+{% load humanize %}
+{% block title %}Health Records{% endblock %}
+
+{% block content %}
+
+<div class="p-6">
+
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">
+        🗂 Health Records
+    </h1>
+
+    <!-- Upload Form -->
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow mb-6">
+        <form method="POST" enctype="multipart/form-data" class="space-y-4">
+            {% csrf_token %}
+            
+            <input type="text" name="title" placeholder="Record Title"
+                class="w-full p-3 rounded border dark:border-gray-700 dark:bg-gray-700 dark:text-white" required>
+
+            <input type="file" name="file"
+                class="w-full p-3 rounded border dark:border-gray-700 dark:bg-gray-700 dark:text-white" required>
+
+            <button class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">
+                Upload Record
+            </button>
+        </form>
+    </div>
+
+    <!-- Records List -->
+    <div class="space-y-4">
+        {% for record in records %}
+        <div class="bg-white dark:bg-gray-800 p-5 rounded-lg shadow flex justify-between items-center">
+            <div>
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-200">
+                    📄 {{ record.title }}
+                </h2>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">
+                    Uploaded: {{ record.uploaded_at|naturaltime }}
+                </p>
+            </div>
+
+            <div class="flex space-x-3">
+
+                <!-- Download -->
+                <a href="{{ record.file.url }}" download
+                   class="bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 text-sm">
+                    Download
+                </a>
+
+                <!-- Delete -->
+                <form action="" method="POST" onsubmit="return confirm('Delete this record?');">
+                    {% csrf_token %}
+                    <input type="hidden" name="delete_id" value="{{ record.id }}">
+                    <button class="bg-red-600 text-white px-3 py-2 rounded hover:bg-red-700 text-sm">
+                        Delete
+                    </button>
+                </form>
+
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-gray-600 dark:text-gray-300">No health records found.</p>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

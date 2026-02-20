@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Health Assistant{% endblock %}</title>
+
+    <!-- Tailwind Dark Mode Config -->
+    <script>
+        tailwind = { config: { darkMode: "class" } }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .sidebar-link:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition">
+
+<div class="flex">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar"
+           class="w-64 bg-teal-700 text-white min-h-screen p-4 space-y-5 transition-all duration-300">
+        
+        <h2 class="text-2xl font-bold mb-3">🩺 Health App</h2>
+
+        <nav class="space-y-2">
+
+            <a href="{% url 'dashboard' %}" class="block px-4 py-2 rounded sidebar-link">🏠 Dashboard</a>
+
+            <a href="{% url 'chat-page' %}" class="block px-4 py-2 rounded sidebar-link">💬 Chat</a>
+
+            <a href="{% url 'alerts' %}" class="block px-4 py-2 rounded sidebar-link">⚠ Alerts</a>
+
+            <a href="{% url 'chat-history' %}" class="block px-4 py-2 rounded sidebar-link">📜 Chat History</a>
+
+            <a href="{% url 'health-records' %}" class="block px-4 py-2 rounded sidebar-link">📁 Health Records</a>
+
+            <a href="{% url 'accounts:profile' %}" class="block px-4 py-2 rounded sidebar-link">
+                👤 Profile
+            </a>
+
+            <!-- FIXED LOGOUT BUTTON -->
+            <a href="{% url 'logout' %}" 
+               class="block px-4 py-2 rounded sidebar-link">
+               🚪 Logout
+            </a>
+
+        </nav>
+
+        <!-- Dark mode toggle -->
+        <button id="toggleDark"
+                class="mt-6 px-3 py-1 bg-white text-teal-700 rounded text-sm">
+            Dark
+        </button>
+
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-1 p-6">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</div>
+
+<script>
+    /* DARK MODE TOGGLE */
+    const toggleBtn = document.getElementById("toggleDark");
+    const root = document.documentElement;
+
+    (function () {
+        const saved = localStorage.getItem("theme");
+        if (saved === "dark") {
+            root.classList.add("dark");
+            toggleBtn.textContent = "Light";
+        }
+    })();
+
+    toggleBtn.addEventListener("click", () => {
+        const dark = root.classList.toggle("dark");
+        toggleBtn.textContent = dark ? "Light" : "Dark";
+        localStorage.setItem("theme", dark ? "dark" : "light");
+    });
+</script>
+
+</body>
+</html>

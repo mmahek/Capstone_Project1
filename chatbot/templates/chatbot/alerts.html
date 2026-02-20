@@ -1,0 +1,60 @@
+{% extends 'chatbot/base.html' %}
+{% block title %}Alerts | Health App{% endblock %}
+
+{% block content %}
+
+<div class="p-6">
+
+    <!-- Page Header -->
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">
+        ⚠️ Health Alerts
+    </h1>
+
+    <!-- Info Text -->
+    <p class="text-gray-600 dark:text-gray-300 mb-4">
+        These alerts are automatically generated based on your symptoms, predictions, or abnormal patterns.
+    </p>
+
+    <!-- Alerts Container -->
+    <div class="space-y-4">
+
+        <!-- RED ALERT -->
+        <div class="flex items-start bg-red-100 dark:bg-red-900 border-l-8 border-red-600 p-4 rounded shadow">
+            <div class="text-red-700 dark:text-red-200 text-2xl pr-3">⚠️</div>
+            <div>
+                <h3 class="font-bold text-red-700 dark:text-red-200 text-lg">High Fever Detected</h3>
+                <p class="text-gray-700 dark:text-gray-300">
+                    Your symptoms indicate a fever above normal levels. Seek medical attention if it continues.
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Alert generated: 2 hours ago</p>
+            </div>
+        </div>
+
+        <!-- YELLOW ALERT -->
+        <div class="flex items-start bg-yellow-100 dark:bg-yellow-700 border-l-8 border-yellow-500 p-4 rounded shadow">
+            <div class="text-yellow-700 dark:text-yellow-200 text-2xl pr-3">⚠️</div>
+            <div>
+                <h3 class="font-bold text-yellow-700 dark:text-yellow-100 text-lg">Possible Infection</h3>
+                <p class="text-gray-700 dark:text-gray-300">
+                    You reported multiple symptoms that could indicate an early infection.
+                </p>
+                <p class="text-sm text-gray-600 dark:text-gray-200 mt-1">Alert generated: 5 hours ago</p>
+            </div>
+        </div>
+
+        <!-- GREEN ALERT -->
+        <div class="flex items-start bg-green-100 dark:bg-green-700 border-l-8 border-green-500 p-4 rounded shadow">
+            <div class="text-green-700 dark:text-green-100 text-2xl pr-3">ℹ️</div>
+            <div>
+                <h3 class="font-bold text-green-700 dark:text-green-100 text-lg">Normal Activity</h3>
+                <p class="text-gray-700 dark:text-gray-300">
+                    Your recent inputs show stable health conditions. No action is required.
+                </p>
+                <p class="text-sm text-gray-600 dark:text-gray-200 mt-1">Alert generated: 1 day ago</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "chatbot/base.html" %}
+{% block title %}Logged Out{% endblock %}
+
+{% block content %}
+
+<div class="flex flex-col items-center justify-center min-h-screen p-6">
+
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center max-w-md w-full">
+        <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">
+            👋 You have been logged out
+        </h1>
+
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+            Thank you for using the Health Assistant.  
+            You can log in anytime to continue.
+        </p>
+
+        <!-- Login Button -->
+        <a href="{% url 'login' %}" 
+           class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg text-lg transition">
+            🔐 Login Again
+        </a>
+
+        <div class="mt-4">
+            <a href="{% url 'dashboard' %}" 
+               class="text-teal-600 dark:text-teal-400 hover:underline text-sm">
+                ← Back to Home
+            </a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
