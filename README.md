@@ -234,7 +234,7 @@ Always consult a healthcare professional.
 
 ## 👩‍💻 Contributors
 
-* Mahek Yadav (and team)
+* Chandni Kumari, Vidhi, Roshni Rai, Mahek, Ritu, Ratna, Jyoti Kumari, Jomaina  
 
 ---
 
