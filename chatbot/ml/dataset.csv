@@ -1,0 +1,7 @@
+fever,cough,headache,fatigue,nausea,joint_pain,thirst,frequent_urination,disease
+1,1,1,1,0,0,0,0,Flu
+1,0,1,1,1,1,0,0,Dengue
+0,0,0,1,0,0,1,1,Diabetes
+1,1,0,1,0,0,0,0,Flu
+1,0,1,1,1,1,0,0,Dengue
+0,0,0,1,0,0,1,1,Diabetes

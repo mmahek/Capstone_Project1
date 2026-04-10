@@ -1,0 +1,20 @@
+{
+  "Flu": {
+    "name": "Influenza",
+    "description": "Viral respiratory infection causing fever, cough, headache, fatigue.",
+    "precautions": ["Rest", "Hydrate", "Paracetamol"],
+    "when_to_see_doctor": "High fever >3 days, difficulty breathing"
+  },
+  "Dengue": {
+    "name": "Dengue Fever",
+    "description": "Mosquito-borne viral infection with high fever, severe headache, joint pain, nausea.",
+    "precautions": ["Rest", "Hydrate", "Paracetamol", "Avoid NSAIDs"],
+    "when_to_see_doctor": "Severe abdominal pain, persistent vomiting, bleeding"
+  },
+  "Diabetes": {
+    "name": "Diabetes",
+    "description": "Chronic condition with high blood sugar, thirst, frequent urination, fatigue.",
+    "precautions": ["Monitor sugar", "Balanced diet", "Exercise"],
+    "when_to_see_doctor": "Excessive thirst, unexplained weight loss"
+  }
+}
