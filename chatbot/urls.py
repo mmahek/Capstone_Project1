@@ -6,7 +6,8 @@ from .views import (
     dashboard,
     alerts_page,
     chat_history,
-    health_records
+    health_records,
+    chat_api
 )
 
 router = DefaultRouter()
@@ -20,7 +21,10 @@ urlpatterns = [
     path("alerts/", alerts_page, name="alerts"),
     path("history/", chat_history, name="chat-history"),
     path("records/", health_records, name="health-records"),
+    
+    path("api/chat/", chat_api, name="chat_api"),
 
     # API
     path("api/", include(router.urls)),
+    
 ]

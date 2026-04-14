@@ -1,0 +1,10 @@
+Django==5.2.8
+djangorestframework==3.15.2
+psycopg2-binary==2.9.9
+pillow==11.1.0  # for image uploads
+sentence-transformers==3.1.1
+faiss-cpu==1.8.0
+scikit-learn==1.5.2
+torch==2.4.1
+numpy==1.26.4
+openai==1.51.0  # optional LLM

@@ -2,7 +2,8 @@
 {% block title %}Chat | Health Assistant{% endblock %}
 {% block content %}
 
-<div class="w-full max-w-md mx-auto">
+    <div class="w-full max-w-4xl mx-auto p-4 md:p-8">
+      {% csrf_token %}
 
   <style>
     /* typing dots animation */
@@ -56,21 +57,18 @@
     <!-- Chat Header -->
     <div class="flex items-center justify-between px-4 py-4 bg-teal-600 dark:bg-teal-700 text-white text-lg font-semibold">
       🩺 Health Assistant
-      <button id="toggleDark"
-        class="bg-white text-teal-600 px-2 py-1 rounded text-sm font-medium">
-        Dark
-      </button>
+
     </div>
 
     <!-- Chat Box -->
     <div id="chatBox"
-         class="h-96 p-4 overflow-y-auto bg-gray-50 dark:bg-gray-700 transition-colors duration-300 space-y-4">
+         class="h-screen max-h-[70vh] p-6 overflow-y-auto bg-gray-50 dark:bg-gray-700 transition-colors duration-300 space-y-4">
     </div>
 
     <!-- Typing bubbles -->
     <div id="typingContainer" class="px-4 py-2 hidden">
       <div class="flex items-center space-x-3">
-        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" class="w-8 h-8 rounded-full">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" class="w-8 h-8 rounded-full" alt="Bot avatar">
         <div class="bg-gray-100 dark:bg-gray-800 px-3 py-2 rounded-xl msg-shadow flex items-center gap-3">
           <div class="bubble-loader">
             <span class="bubble" style="background:#cfeee6"></span>
@@ -117,68 +115,102 @@
   <!-- CHAT SCRIPT SECTION -->
   <script>
 
-    /* Dark Mode */
-    const toggleBtn = document.getElementById("toggleDark");
-    const root = document.documentElement;
-
-    (function initTheme() {
-      const saved = localStorage.getItem("theme");
-      if (saved === "dark") {
-        root.classList.add("dark");
-        toggleBtn.textContent = "Light";
-      }
-    })();
-
-    toggleBtn.addEventListener("click", () => {
-      const isDark = root.classList.toggle("dark");
-      toggleBtn.textContent = isDark ? "Light" : "Dark";
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
-
 
     /* Message Functions */
     const chatBox = document.getElementById("chatBox");
     const typingContainer = document.getElementById("typingContainer");
     const shimmer = document.getElementById("shimmer");
 
-    function addMessageBubble(text, isUser=false) {
+    function addMessageBubble(text, isUser = false) {
 
-      const avatar = isUser
-        ? "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
-        : "https://cdn-icons-png.flaticon.com/512/4712/4712100.png";
+        const avatar = isUser
+          ? "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
+          : "https://cdn-icons-png.flaticon.com/512/4712/4712100.png";
 
-      const wrapper = document.createElement("div");
-      wrapper.className = (isUser ? "flex justify-end" : "flex justify-start")
-                        + " items-start space-x-2";
+        const wrapper = document.createElement("div");
+        wrapper.className = (isUser ? "flex justify-end" : "flex justify-start")
+          + " items-start space-x-2";
 
-      const bubble = document.createElement("div");
-      bubble.className = "max-w-[75%] px-4 py-2 rounded-xl msg-shadow transition-colors duration-300";
-      bubble.style.whiteSpace = "pre-wrap";
+        const bubble = document.createElement("div");
+        bubble.className = "max-w-[75%] px-4 py-3 rounded-xl msg-shadow transition-colors duration-300";
+        bubble.style.whiteSpace = "pre-line";
+        bubble.style.lineHeight = "1.6";
 
-      if (isUser) bubble.classList.add("bg-teal-600","text-white","rounded-br-none");
-      else bubble.classList.add("bg-gray-200","dark:bg-gray-600","text-gray-800","dark:text-gray-100","rounded-bl-none");
+        if (isUser) {
+          bubble.classList.add("bg-teal-600", "text-white", "rounded-br-none");
+          bubble.innerHTML = text.replace(/\n/g, "<br>");
+        } else {
+          bubble.classList.add("bg-gray-200", "dark:bg-gray-600", "text-gray-800", "dark:text-gray-100", "rounded-bl-none");
 
-      bubble.innerText = text;
+          // 🔥 SMART FORMATTING FOR BOT RESPONSE
+          let formatted = text;
 
-      if (!isUser) {
-        const img = document.createElement("img");
-        img.src = avatar;
-        img.className = "w-8 h-8 rounded-full";
-        wrapper.appendChild(img);
-        wrapper.appendChild(bubble);
-      } else {
-        wrapper.appendChild(bubble);
-        const img = document.createElement("img");
-        img.src = avatar;
-        img.className = "w-8 h-8 rounded-full";
-        wrapper.appendChild(img);
+          // Highlight disease
+          formatted = formatted.replace(
+            /(related to )(.*?)(\.)/,
+            '$1<strong class="text-green-500">$2</strong>$3'
+          );
+
+          // Highlight confidence %
+          formatted = formatted.replace(
+            /(Confidence: )(\d+%)/,
+            '$1<span class="bg-yellow-500 text-white px-2 py-1 rounded text-sm">$2</span>'
+          );
+
+          // Highlight sections
+          formatted = formatted
+            .replace(/Precautions:/g, '<br><strong>🛡️ Precautions:</strong>')
+            .replace(/Consult a doctor if:/g, '<br><strong>⚠️ When to see a doctor:</strong>')
+            .replace(/Other possible conditions:/g, '<br><strong>🔎 Other possibilities:</strong>')
+            .replace(/Why this condition\?/g, '<br><strong>🧠 Why this condition?</strong>');
+
+          // Convert newlines to HTML
+          formatted = formatted.replace(/\n/g, "<br>");
+
+          bubble.innerHTML = formatted;
+          if (text.includes("⚠️")) {
+            bubble.classList.add("border-l-4", "border-red-500");
+          }
+        }
+
+        if (!isUser) {
+          const img = document.createElement("img");
+          img.src = avatar;
+          img.className = "w-8 h-8 rounded-full";
+          wrapper.appendChild(img);
+          wrapper.appendChild(bubble);
+        } else {
+          wrapper.appendChild(bubble);
+          const img = document.createElement("img");
+          img.src = avatar;
+          img.className = "w-8 h-8 rounded-full";
+          wrapper.appendChild(img);
+        }
+
+        chatBox.appendChild(wrapper);
+        chatBox.scrollTop = chatBox.scrollHeight;
       }
 
-      chatBox.appendChild(wrapper);
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
+      function addQuickReplies(options) {
+          const container = document.createElement("div");
+          container.className = "flex gap-2 flex-wrap mt-2";
 
+          options.forEach(opt => {
+            const btn = document.createElement("button");
+            btn.innerText = opt;
+            btn.className = "bg-teal-500 hover:bg-teal-600 text-white px-3 py-1 rounded-lg text-sm";
 
+            btn.onclick = () => {
+              document.getElementById("userInput").value = opt;
+              sendMessage();
+            };
+
+            container.appendChild(btn);
+          });
+
+          chatBox.appendChild(container);
+          chatBox.scrollTop = chatBox.scrollHeight;
+        }
     /* Typing indicator */
     function showTyping(flag=true){
       typingContainer.classList.toggle("hidden", !flag);
@@ -210,16 +242,31 @@
       input.value = "";
       showTyping(true);
 
+      const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
       const res = await fetch("/api/chat/", {
         method:"POST",
-        headers:{ "Content-Type":"application/json" },
+        headers:{ 
+          "Content-Type":"application/json",
+          "X-CSRFToken": csrfToken
+        },
         body:JSON.stringify({ text })
       });
+
+      if (!res.ok) {
+        throw new Error('API failed: ' + res.status);
+      }
 
       const data = await res.json();
 
       showTyping(false);
-      addMessageBubble(data.bot_message.text, false);
+      const botText = data.bot_message.text || data.bot_message;
+
+      addMessageBubble(botText, false);
+
+      // 🔥 detect follow-up
+      if (botText.includes("Would you like")) {
+        addQuickReplies(["Treatment advice", "Prevention tips"]);
+      }
     }
 
 

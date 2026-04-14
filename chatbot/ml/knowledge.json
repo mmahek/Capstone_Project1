@@ -1,0 +1,526 @@
+[
+    
+    {"disease_name": "Malaria",
+"summary": "A serious mosquito-borne disease caused by parasites that infect the blood, leading to recurring fever, chills, and weakness.",
+"symptoms": [
+"fever",
+"chills",
+"sweating",
+"headache",
+"fatigue",
+"nausea",
+"vomiting",
+"anemia",
+"enlarged spleen",
+"muscle pain"
+],
+"precautions": [
+"use mosquito repellent",
+"sleep under mosquito nets",
+"wear full body clothing",
+"avoid mosquito exposure",
+"take preventive antimalarial drugs",
+"stay indoors at night",
+"eliminate standing water"
+],
+"when_to_see_doctor": "Seek medical help if you have recurring fever with chills, severe weakness, confusion, difficulty breathing, persistent vomiting, or if symptoms appear after visiting a malaria-prone area."},
+
+{
+"disease_name": "Dengue Fever",
+"summary": "A mosquito-borne viral infection that causes sudden fever, body pain, and rash. It is common in tropical regions and can sometimes become severe.",
+"symptoms": [
+"high fever",
+"chills",
+"headache",
+"eye pain",
+"red eyes",
+"rash",
+"joint pain",
+"muscle pain",
+"back pain",
+"fatigue",
+"weakness",
+"swollen lymph nodes"
+],
+"precautions": [
+"use mosquito repellent",
+"avoid standing water",
+"use bed nets",
+"stay hydrated",
+"get adequate rest",
+"take fever-reducing medicines",
+"avoid mosquito exposure"
+],
+"when_to_see_doctor": "Seek medical help if there is severe abdominal pain, persistent vomiting, bleeding, bruising, difficulty breathing, or signs of shock like weakness or low blood pressure."
+},
+
+{
+"disease_name": "Typhoid Fever",
+"summary": "A serious bacterial infection caused by Salmonella typhi, usually spread through contaminated food and water due to poor hygiene.",
+"symptoms": [
+"high fever",
+"fatigue",
+"headache",
+"constipation",
+"abdominal pain",
+"rash",
+"joint pain",
+"weakness",
+"loss of appetite"
+],
+"precautions": [
+"maintain good hygiene",
+"wash hands regularly",
+"drink clean water",
+"eat properly cooked food",
+"avoid contaminated food",
+"ensure proper sanitation",
+"get vaccinated if traveling"
+],
+"when_to_see_doctor": "Seek medical help if there is persistent high fever, severe abdominal pain, confusion, bleeding, or if symptoms last more than a few days."
+},
+
+{
+"disease_name": "Migraine",
+"summary": "A neurological condition causing intense, recurring headaches often accompanied by nausea and sensitivity to light and sound.",
+"symptoms": [
+"headache",
+"throbbing pain",
+"nausea",
+"vomiting",
+"light sensitivity",
+"sound sensitivity",
+"blurred vision",
+"aura",
+"tingling",
+"fatigue"
+],
+"precautions": [
+"avoid trigger foods",
+"maintain regular sleep",
+"manage stress",
+"stay hydrated",
+"avoid bright lights",
+"limit caffeine",
+"rest in a quiet dark room"
+],
+"when_to_see_doctor": "Seek medical help if headaches are severe, frequent, worsen over time, or are accompanied by vision loss, confusion, weakness, or difficulty speaking."
+},
+
+{
+"disease_name": "Anxiety Disorder",
+"summary": "A mental health condition characterized by excessive fear, worry, or nervousness that interferes with daily life and functioning.",
+"symptoms": [
+"excessive worry",
+"fear",
+"restlessness",
+"racing heart",
+"dizziness",
+"fatigue",
+"irritability",
+"sleep problems",
+"difficulty concentrating"
+],
+"precautions": [
+"manage stress",
+"practice relaxation techniques",
+"maintain regular sleep",
+"exercise regularly",
+"avoid triggers",
+"seek counseling",
+"build support system"
+],
+"when_to_see_doctor": "Seek medical help if anxiety is persistent, interferes with daily activities, causes panic attacks, or leads to thoughts of self-harm."
+},
+
+{
+"disease_name": "Gastritis",
+"summary": "Inflammation of the stomach lining, often caused by infection or irritation, leading to discomfort and digestive issues.",
+"symptoms": [
+"abdominal pain",
+"burning sensation",
+"nausea",
+"vomiting",
+"loss of appetite",
+"bloating"
+],
+"precautions": [
+"avoid spicy foods",
+"limit alcohol",
+"avoid NSAIDs",
+"eat balanced meals",
+"maintain hygiene",
+"take prescribed medications",
+"manage stress"
+],
+"when_to_see_doctor": "Seek medical help if there is severe stomach pain, persistent vomiting, blood in vomit or stool, or symptoms lasting more than a few days."
+},
+
+{
+"disease_name": "Fracture",
+"summary": "A fracture is a break or crack in a bone caused by injury, stress, or weakened bones.",
+"symptoms": [
+"pain",
+"swelling",
+"bruising",
+"deformity",
+"difficulty moving",
+"numbness",
+"tingling"
+],
+"precautions": [
+"avoid high-risk activities",
+"use protective gear",
+"maintain bone health",
+"ensure adequate calcium",
+"exercise regularly",
+"follow safety measures",
+"rest injured area"
+],
+"when_to_see_doctor": "Seek immediate medical help if there is severe pain, visible deformity, inability to move the limb, numbness, bleeding, or suspected broken bone."
+},
+
+{
+"disease_name": "Food Poisoning",
+"summary": "A condition caused by eating contaminated food, leading to digestive problems like vomiting and diarrhea.",
+"symptoms": [
+"nausea",
+"vomiting",
+"diarrhea",
+"abdominal pain",
+"fever",
+"cramps",
+"dehydration"
+],
+"precautions": [
+"wash hands before eating",
+"cook food properly",
+"store food correctly",
+"avoid contaminated food",
+"wash fruits and vegetables",
+"use clean utensils",
+"drink safe water"
+],
+"when_to_see_doctor": "Seek medical help if there is severe dehydration, persistent vomiting, blood in stool, high fever, or symptoms lasting more than a few days."
+},
+{
+"disease_name": "Diarrhea",
+"summary": "A condition where frequent loose or watery stools occur, often due to infection or digestive issues.",
+"symptoms": [
+"loose stools",
+"frequent bowel movements",
+"abdominal pain",
+"cramps",
+"nausea",
+"vomiting",
+"fever",
+"dehydration"
+],
+"precautions": [
+"drink plenty of fluids",
+"maintain hygiene",
+"eat light foods",
+"avoid contaminated food",
+"wash hands regularly",
+"use oral rehydration solution",
+"avoid trigger foods"
+],
+"when_to_see_doctor": "Seek medical help if there is severe dehydration, high fever, blood in stool, persistent diarrhea for several days, or weakness."
+},
+{
+"disease_name": "Diabetes",
+"summary": "A chronic condition where the body cannot properly regulate blood sugar levels due to lack of insulin or its ineffective use.",
+"symptoms": [
+"frequent urination",
+"excessive thirst",
+"increased hunger",
+"fatigue",
+"blurred vision",
+"weight loss",
+"slow healing",
+"infections"
+],
+"precautions": [
+"maintain healthy diet",
+"exercise regularly",
+"monitor blood sugar",
+"avoid sugary foods",
+"maintain healthy weight",
+"take prescribed medication",
+"regular health checkups"
+],
+"when_to_see_doctor": "Seek medical help if you experience excessive thirst, frequent urination, unexplained weight loss, or consistently high blood sugar levels."
+},
+{
+"disease_name": "Anemia",
+"summary": "A condition where the body has a low number of red blood cells or hemoglobin, leading to reduced oxygen supply to tissues.",
+"symptoms": [
+"fatigue",
+"weakness",
+"pale skin",
+"shortness of breath",
+"dizziness",
+"headache",
+"cold hands",
+"irregular heartbeat"
+],
+"precautions": [
+"eat iron-rich foods",
+"take iron supplements",
+"consume vitamin c",
+"maintain balanced diet",
+"regular health checkups",
+"avoid excessive tea coffee",
+"treat underlying causes"
+],
+"when_to_see_doctor": "Seek medical help if there is persistent fatigue, dizziness, shortness of breath, or symptoms worsen over time."
+},
+
+{
+"disease_name": "Thyroid Disorder",
+"summary": "A condition where the thyroid gland produces too much or too little hormone, affecting metabolism and overall body functions.",
+"symptoms": [
+"fatigue",
+"weight changes",
+"hair loss",
+"mood swings",
+"cold intolerance",
+"heat intolerance",
+"irregular periods",
+"heart rate changes"
+],
+"precautions": [
+"maintain balanced diet",
+"use iodized salt",
+"take prescribed medication",
+"regular thyroid tests",
+"manage stress",
+"exercise regularly",
+"avoid self medication"
+],
+"when_to_see_doctor": "Seek medical help if you have persistent fatigue, unexplained weight changes, swelling in the neck, or irregular heartbeat."
+},
+
+{
+"disease_name": "Pneumonia",
+"summary": "A lung infection that causes inflammation of the air sacs, leading to breathing difficulty and fever.",
+"symptoms": [
+"cough",
+"fever",
+"chills",
+"shortness of breath",
+"chest pain",
+"fatigue",
+"sweating",
+"rapid breathing"
+],
+"precautions": [
+"maintain hygiene",
+"get vaccinated",
+"avoid smoking",
+"wash hands regularly",
+"boost immunity",
+"avoid sick contacts",
+"rest adequately"
+],
+"when_to_see_doctor": "Seek medical help if there is difficulty breathing, high fever, chest pain, persistent cough, or bluish lips or nails."
+},
+
+{
+"disease_name": "Asthma",
+"summary": "A chronic respiratory condition where airways become inflamed and narrowed, causing breathing difficulty.",
+"symptoms": [
+"shortness of breath",
+"wheezing",
+"cough",
+"chest tightness",
+"difficulty breathing"
+],
+"precautions": [
+"avoid triggers",
+"use inhaler as prescribed",
+"avoid smoke and dust",
+"monitor symptoms",
+"exercise carefully",
+"maintain clean environment",
+"follow treatment plan"
+],
+"when_to_see_doctor": "Seek medical help if breathing becomes very difficult, symptoms worsen suddenly, or inhaler does not provide relief."
+},
+
+{
+"disease_name": "Common Cold",
+"summary": "A mild viral infection affecting the nose and throat, causing sneezing, cough, and congestion.",
+"symptoms": [
+"runny nose",
+"sneezing",
+"cough",
+"sore throat",
+"congestion",
+"mild fever",
+"fatigue",
+"headache"
+],
+"precautions": [
+"wash hands regularly",
+"avoid close contact",
+"stay hydrated",
+"get enough rest",
+"use tissues when sneezing",
+"maintain hygiene",
+"boost immunity"
+],
+"when_to_see_doctor": "Seek medical help if symptoms last more than a week, worsen, or include high fever, severe sore throat, or difficulty breathing."
+},
+{
+"disease_name": "Influenza (Flu)",
+"summary": "A contagious viral respiratory infection that causes fever, body aches, and fatigue, often more severe than a common cold.",
+"symptoms": [
+"fever",
+"chills",
+"cough",
+"sore throat",
+"runny nose",
+"body aches",
+"fatigue",
+"headache"
+],
+"precautions": [
+"get flu vaccination",
+"wash hands regularly",
+"avoid close contact",
+"cover coughs and sneezes",
+"stay hydrated",
+"rest adequately",
+"boost immunity"
+],
+"when_to_see_doctor": "Seek medical help if there is high fever, difficulty breathing, chest pain, persistent vomiting, or symptoms worsen or do not improve."
+},
+
+{
+"disease_name": "Heart Attack (Myocardial Infarction)",
+"summary": "A serious condition where blood flow to the heart is blocked, causing damage to the heart muscle.",
+"symptoms": [
+"chest pain",
+"chest pressure",
+"shortness of breath",
+"sweating",
+"nausea",
+"dizziness",
+"fatigue",
+"arm pain"
+],
+"precautions": [
+"maintain healthy diet",
+"exercise regularly",
+"avoid smoking",
+"control blood pressure",
+"manage cholesterol",
+"reduce stress",
+"regular health checkups"
+],
+"when_to_see_doctor": "Seek immediate medical help if there is severe chest pain, pressure spreading to arm or jaw, difficulty breathing, sweating, or sudden dizziness."
+},
+
+{
+"disease_name": "Stroke",
+"summary": "A medical emergency where blood flow to the brain is interrupted, causing brain damage and loss of function.",
+"symptoms": [
+"face drooping",
+"arm weakness",
+"speech difficulty",
+"sudden confusion",
+"vision problems",
+"severe headache",
+"dizziness",
+"loss of balance"
+],
+"precautions": [
+"control blood pressure",
+"manage diabetes",
+"exercise regularly",
+"eat healthy diet",
+"avoid smoking",
+"limit alcohol",
+"regular health checkups"
+],
+"when_to_see_doctor": "Seek immediate medical help if there is sudden face drooping, arm weakness, speech problems, vision loss, or severe headache."
+},
+
+{
+"disease_name": "Urinary Tract Infection (UTI)",
+"summary": "An infection in the urinary system, usually caused by bacteria, leading to pain and discomfort during urination.",
+"symptoms": [
+"burning urination",
+"frequent urination",
+"urgent urination",
+"cloudy urine",
+"foul smell",
+"pelvic pain",
+"lower abdominal pain",
+"fever"
+],
+"precautions": [
+"drink plenty of water",
+"maintain hygiene",
+"urinate regularly",
+"wipe front to back",
+"avoid holding urine",
+"wear clean underwear",
+"avoid irritants"
+],
+"when_to_see_doctor": "Seek medical help if there is severe pain, blood in urine, fever, back pain, or symptoms persist for more than a few days."
+},
+
+{
+"disease_name": "Allergic Dermatitis (Eczema)",
+"summary": "A skin condition caused by allergic reactions or irritation, leading to inflammation, itching, and dry skin.",
+"symptoms": [
+"itching",
+"redness",
+"dry skin",
+"rash",
+"swelling",
+"blisters",
+"cracked skin"
+],
+"precautions": [
+"avoid allergens",
+"keep skin moisturized",
+"use mild soaps",
+"avoid harsh chemicals",
+"wear soft clothing",
+"maintain hygiene",
+"manage stress"
+],
+"when_to_see_doctor": "Seek medical help if the rash is severe, spreads rapidly, shows signs of infection, or does not improve with basic care."
+},
+
+{
+"disease_name": "COVID-19",
+"summary": "A contagious viral respiratory illness caused by the coronavirus, affecting the lungs and overall health.",
+"symptoms": [
+"fever",
+"cough",
+"fatigue",
+"shortness of breath",
+"loss of taste",
+"loss of smell",
+"sore throat",
+"body aches"
+],
+"precautions": [
+"wear masks",
+"wash hands regularly",
+"maintain social distance",
+"get vaccinated",
+"avoid crowded places",
+"maintain hygiene",
+"isolate if infected"
+],
+"when_to_see_doctor": "Seek medical help if there is difficulty breathing, persistent chest pain, confusion, bluish lips, or high fever."
+}
+
+
+
+]

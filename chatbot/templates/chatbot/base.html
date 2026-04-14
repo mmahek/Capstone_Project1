@@ -1,91 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Health Assistant{% endblock %}</title>
-
-    <!-- Tailwind Dark Mode Config -->
-    <script>
-        tailwind = { config: { darkMode: "class" } }
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {}
+        }
+      }
+    </script>
     <style>
         .sidebar-link:hover {
-            background-color: rgba(255, 255, 255, 0.15);
+            @apply bg-white/20;
         }
     </style>
 </head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-200">
 
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition">
+  <div class="flex">
 
-<div class="flex">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-64 bg-gradient-to-b from-teal-600 to-teal-700 text-white shadow-2xl min-h-screen p-6 space-y-6 transition-all duration-300">
+      
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
+          🩺
+        </div>
+        <h1 class="text-2xl font-bold">HealthBot</h1>
+      </div>
 
-    <!-- SIDEBAR -->
-    <aside id="sidebar"
-           class="w-64 bg-teal-700 text-white min-h-screen p-4 space-y-5 transition-all duration-300">
-        
-        <h2 class="text-2xl font-bold mb-3">🩺 Health App</h2>
+      <nav class="space-y-1">
+        <a href="{% url 'dashboard' %}" class="sidebar-link block px-4 py-3 rounded-xl flex items-center space-x-3 group">
+          <span>🏠</span>
+          <span>Dashboard</span>
+        </a>
 
-        <nav class="space-y-2">
+        <a href="{% url 'chat-page' %}" class="sidebar-link block px-4 py-3 rounded-xl flex items-center space-x-3 group bg-white/10">
+          <span>💬</span>
+          <span>Chat</span>
+        </a>
 
-            <a href="{% url 'dashboard' %}" class="block px-4 py-2 rounded sidebar-link">🏠 Dashboard</a>
+        <a href="{% url 'alerts' %}" class="sidebar-link block px-4 py-3 rounded-xl flex items-center space-x-3 group">
+          <span>⚠️</span>
+          <span>Alerts</span>
+        </a>
 
-            <a href="{% url 'chat-page' %}" class="block px-4 py-2 rounded sidebar-link">💬 Chat</a>
+        <a href="{% url 'chat-history' %}" class="sidebar-link block px-4 py-3 rounded-xl flex items-center space-x-3 group">
+          <span>📜</span>
+          <span>History</span>
+        </a>
 
-            <a href="{% url 'alerts' %}" class="block px-4 py-2 rounded sidebar-link">⚠ Alerts</a>
+        <a href="{% url 'health-records' %}" class="sidebar-link block px-4 py-3 rounded-xl flex items-center space-x-3 group">
+          <span>📁</span>
+          <span>Records</span>
+        </a>
 
-            <a href="{% url 'chat-history' %}" class="block px-4 py-2 rounded sidebar-link">📜 Chat History</a>
+        <a href="{% url 'accounts:profile' %}" class="sidebar-link block px-4 py-3 rounded-xl flex items-center space-x-3 group">
+          <span>👤</span>
+          <span>Profile</span>
+        </a>
 
-            <a href="{% url 'health-records' %}" class="block px-4 py-2 rounded sidebar-link">📁 Health Records</a>
+        <a href="{% url 'logout' %}" class="sidebar-link block px-4 py-3 rounded-xl flex items-center space-x-3 group mt-auto border-t border-white/20 pt-4">
+          <span>🚪</span>
+          <span>Logout</span>
+        </a>
+      </nav>
 
-            <a href="{% url 'accounts:profile' %}" class="block px-4 py-2 rounded sidebar-link">
-                👤 Profile
-            </a>
-
-            <!-- FIXED LOGOUT BUTTON -->
-            <a href="{% url 'logout' %}" 
-               class="block px-4 py-2 rounded sidebar-link">
-               🚪 Logout
-            </a>
-
-        </nav>
-
-        <!-- Dark mode toggle -->
-        <button id="toggleDark"
-                class="mt-6 px-3 py-1 bg-white text-teal-700 rounded text-sm">
-            Dark
-        </button>
+      <!-- Theme Toggle -->
+      <button id="themeToggle" class="w-full p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all flex items-center justify-center space-x-2 text-sm">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon hidden">🌙</span>
+        <span id="themeLabel">Light</span>
+      </button>
 
     </aside>
 
-    <!-- MAIN CONTENT AREA -->
-    <main class="flex-1 p-6">
-        {% block content %}
-        {% endblock %}
+    <!-- Main Content -->
+    <main class="flex-1 p-8">
+      {% block content %}{% endblock %}
     </main>
 
-</div>
+  </div>
 
 <script>
-    /* DARK MODE TOGGLE */
-    const toggleBtn = document.getElementById("toggleDark");
-    const root = document.documentElement;
+  // Theme Toggle Logic
+  (function() {
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const label = document.getElementById('themeLabel');
+    const sun = toggle.querySelector('.sun-icon');
+    const moon = toggle.querySelector('.moon-icon');
 
-    (function () {
-        const saved = localStorage.getItem("theme");
-        if (saved === "dark") {
-            root.classList.add("dark");
-            toggleBtn.textContent = "Light";
-        }
-    })();
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.classList.toggle('dark', savedTheme === 'dark');
+    label.textContent = savedTheme === 'dark' ? 'Light' : 'Dark';
+    sun.classList.toggle('hidden', savedTheme === 'dark');
+    moon.classList.toggle('hidden', savedTheme !== 'dark');
 
-    toggleBtn.addEventListener("click", () => {
-        const dark = root.classList.toggle("dark");
-        toggleBtn.textContent = dark ? "Light" : "Dark";
-        localStorage.setItem("theme", dark ? "dark" : "light");
+    // Toggle handler
+    toggle.addEventListener('click', () => {
+      const isDark = html.classList.toggle('dark');
+      label.textContent = isDark ? 'Light' : 'Dark';
+      sun.classList.toggle('hidden', isDark);
+      moon.classList.toggle('hidden', !isDark);
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
+  })();
 </script>
 
 </body>
