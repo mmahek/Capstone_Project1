@@ -131,10 +131,17 @@
         wrapper.className = (isUser ? "flex justify-end" : "flex justify-start")
           + " items-start space-x-2";
 
+<<<<<<< HEAD
         const bubble = document.createElement("div");
         bubble.className = "max-w-[75%] px-4 py-3 rounded-xl msg-shadow transition-colors duration-300";
         bubble.style.whiteSpace = "pre-line";
         bubble.style.lineHeight = "1.6";
+=======
+      const bubble = document.createElement("div");
+      bubble.className = "max-w-[75%] px-4 py-2 rounded-xl msg-shadow transition-colors duration-300";
+      bubble.style.whiteSpace = "pre-line";
+      bubble.style.lineHeight = "1.5";
+>>>>>>> 9e596f7b11a33f607ee0c1ee5bb61b3661a45d9f
 
         if (isUser) {
           bubble.classList.add("bg-teal-600", "text-white", "rounded-br-none");
@@ -142,8 +149,13 @@
         } else {
           bubble.classList.add("bg-gray-200", "dark:bg-gray-600", "text-gray-800", "dark:text-gray-100", "rounded-bl-none");
 
+<<<<<<< HEAD
           // 🔥 SMART FORMATTING FOR BOT RESPONSE
           let formatted = text;
+=======
+      // Use innerHTML to render newlines and bold
+      bubble.innerHTML = text.replace(/\\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+>>>>>>> 9e596f7b11a33f607ee0c1ee5bb61b3661a45d9f
 
           // Highlight disease
           formatted = formatted.replace(
@@ -259,6 +271,7 @@
       const data = await res.json();
 
       showTyping(false);
+<<<<<<< HEAD
       const botText = data.bot_message.text || data.bot_message;
 
       addMessageBubble(botText, false);
@@ -267,6 +280,9 @@
       if (botText.includes("Would you like")) {
         addQuickReplies(["Treatment advice", "Prevention tips"]);
       }
+=======
+      addMessageBubble(data.bot_message.text || data.bot_message, false);
+>>>>>>> 9e596f7b11a33f607ee0c1ee5bb61b3661a45d9f
     }
 
 

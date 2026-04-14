@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fever,chills,fatigue,weakness,weight loss,weight gain,sweating,headache,chest pain,abdominal pain,joint pain,body aches,back pain,cough,shortness of breath,wheezing,sore throat,runny nose,congestion,nausea,vomiting,diarrhea,constipation,bloating,loss of appetite,rash,itching,redness,dry skin,swelling,blisters,dizziness,confusion,loss of balance,tingling,numbness,frequent urination,burning urination,thirst,loss of taste,loss of smell,vision problems,palpitations,disease
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Psoriasis
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,1,0,1,1,0,0,Psoriasis
@@ -1199,3 +1200,12 @@ fever,chills,fatigue,weakness,weight loss,weight gain,sweating,headache,chest pa
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,diabetes
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,diabetes
 0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,diabetes
+=======
+fever,cough,headache,fatigue,nausea,joint_pain,thirst,frequent_urination,disease
+1,1,1,1,0,0,0,0,Flu
+1,0,1,1,1,1,0,0,Dengue
+0,0,0,1,0,0,1,1,Diabetes
+1,1,0,1,0,0,0,0,Flu
+1,0,1,1,1,1,0,0,Dengue
+0,0,0,1,0,0,1,1,Diabetes
+>>>>>>> 9e596f7b11a33f607ee0c1ee5bb61b3661a45d9f
